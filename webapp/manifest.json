@@ -47,6 +47,18 @@
 		"contentDensities":{
 			 "compact": true,
         	"cozy": true
+		},
+		"models":{
+			"helloPanel":{
+				"type":"sap.ui.model.json.JSONModel",
+				"uri":"model/HelloPanel.json"
+			},
+			"i18n":{
+				"type":"sap.ui.model.resource.ResourceModel",
+				"settings":{
+					"bundleName": "opensap.myapp.i18n.i18n"
+				}
+			}
 		}
 	}
 }
