@@ -17,9 +17,8 @@
 
 		<script>
 			sap.ui.getCore().attachInit(function () {
-				//alert("SAPUI5 is ready");
-				sap.ui.xmlview({
-					viewName: "opensap.myapp.view.App"	
+				new sap.ui.core.ComponentContainer({
+					name: "opensap.myapp"
 				}).placeAt("content");
 			});
 		</script>
