@@ -11,6 +11,9 @@ sap.ui.define([
 				//call init of parent
 				UIComponent.prototype.init.apply(this, arguments);
 				
+				//switching off batch mode for odata calls
+				this.getModel().setUseBatch(false);
+				
 				//additional initialization is done here
 			}
 		});

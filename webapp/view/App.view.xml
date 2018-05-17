@@ -85,6 +85,9 @@
 										id="productsList"
 										items="{
 											path: '/ProductSet',
+											parameters: {
+												expand: 'ToSupplier'
+											},
 											sorter:{
 												path: 'Category',
 												group: true
@@ -116,7 +119,22 @@
 												numberState="{= ${Price} > 500 ? 'Error':'Success'}"
 												intro="{ProductID}"
 												press="onItemSelected"
-												type="Active"/>
+												type="Active">
+													<firstStatus>
+														<ObjectStatus text="{
+															parts: [
+																{path: 'WeightUnit'},
+																{path: 'WeightMeasure'}
+															],
+															formatter : '.formatter.delivery'
+														}"/>
+													</firstStatus>
+													<secondStatus>
+														<ObjectStatus
+															title="{i18n>statusDeliveryFrom}"
+															text="{ToSupplier/Address/City}"/>
+													</secondStatus>
+												</ObjectListItem>	
 										</items>
 									</List>
 									<Panel id="productDetailsPanel"
